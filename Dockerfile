@@ -6,7 +6,7 @@ FROM certbot/certbot
 
 RUN mkdir /etc/certbot && mkdir /etc/certbot/configs && mkdir /etc/certbot/cron
 
-ENV DOMAIN_NAME example.com
+ENV DOMAIN_NAME=example.com
 
 COPY renew.sh /etc/certbot/cron/renew.sh
 COPY ${DOMAIN_NAME}.conf /etc/certbot/configs/${DOMAIN_NAME}.conf certonly
