@@ -1,8 +1,8 @@
-FROM alpine:3.3
+FROM certbot/certbot
 
-RUN apt-get update && apt-get install -y git
+# RUN apt-get update && apt-get install -y git
 
-RUN git clone https://github.com/certbot/certbot /opt/certbot
+# RUN git clone https://github.com/certbot/certbot /opt/certbot
 
 RUN mkdir /etc/certbot && mkdir /etc/certbot/configs && mkdir /etc/certbot/cron
 
