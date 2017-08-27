@@ -9,7 +9,7 @@ RUN mkdir /etc/certbot && mkdir /etc/certbot/configs && mkdir /etc/certbot/cron
 ENV DOMAIN_NAME=example.com
 
 COPY renew.sh /etc/certbot/cron/renew.sh
-COPY example.com.conf /etc/certbot/configs/example.com.conf certonly
+COPY example.com.conf /etc/certbot/configs/example.com.conf
 
 RUN touch /var/log/cron.log
 
