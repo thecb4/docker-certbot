@@ -17,8 +17,8 @@ RUN touch /var/log/cron.log
 
 VOLUME /etc/letsencrypt/configs
 
-RUN /usr/sbin/useradd --create-home --home-dir /usr/local/letsencrypt --shell /bin/bash letsencrypt
-RUN /usr/sbin/adduser letsencrypt sudo
+RUN useradd --create-home --home-dir /usr/local/letsencrypt --shell /bin/bash letsencrypt
+RUN adduser letsencrypt sudo
 
 RUN chown -R letsencrypt /etc/letsencrypt/
 
