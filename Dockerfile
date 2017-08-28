@@ -4,8 +4,6 @@ FROM certbot/certbot
 
 # RUN git clone https://github.com/certbot/certbot /opt/certbot
 
-ENV PATH=/usr/local/bin:/usr/bin:$PATH
-
 RUN mkdir /etc/letsencrypt/cron
 
 ENV DOMAIN_NAME=example.com

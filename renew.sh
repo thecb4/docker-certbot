@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd /opt/certbot/
 if [ "$TEST_CERT" == "true" ]; then
