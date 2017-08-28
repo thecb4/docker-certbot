@@ -17,8 +17,14 @@ RUN touch /var/log/cron.log
 
 VOLUME /etc/letsencrypt/configs
 
+RUN useradd -u 1250 -M -r letsencrypt
+
+RUN chown -R letsencrypt: /etc/letsencrypt/
+
 WORKDIR /etc/letsencrypt/cron
 
-ENTRYPOINT []
+USER letsencrypt
 
-CMD ./run.sh
+ENTRYPOINT [ "/bin/bash", "./run.sh" ]
+
+# CMD ./run.sh
