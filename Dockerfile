@@ -23,11 +23,11 @@ RUN adduser -S letsencrypt \
     && echo "letsencrypt ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && echo 'letsencrypt:letsencrypt' | chpasswd
 
-# RUN chown -R letsencrypt /etc/letsencrypt
-
-WORKDIR /etc/letsencrypt/cron
+RUN chown -R letsencrypt /etc/letsencrypt
 
 USER letsencrypt
+
+WORKDIR /etc/letsencrypt/cron
 
 ENTRYPOINT "./run.sh"
 
