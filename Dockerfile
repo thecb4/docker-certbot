@@ -19,4 +19,4 @@ VOLUME /etc/letsencrypt/configs
 
 WORKDIR /etc/letsencrypt/cron
 
-CMD ./run.sh
+ENTRYPOINT ./run.sh
