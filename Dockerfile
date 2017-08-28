@@ -19,4 +19,6 @@ VOLUME /etc/letsencrypt/configs
 
 WORKDIR /etc/letsencrypt/cron
 
-ENTRYPOINT ./run.sh
+ENTRYPOINT bin/bash
+
+CMD ./run.sh
