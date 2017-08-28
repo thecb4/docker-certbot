@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 /etc/letsencrypt/cron/renew.sh
 

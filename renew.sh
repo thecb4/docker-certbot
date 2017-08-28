@@ -2,9 +2,9 @@
 
 cd /opt/certbot/
 if [ "$TEST_CERT" == "true" ]; then
-	./certbot-auto --config --test-cert /etc/letsencrypt/configs/$DOMAIN_NAME.conf certonly
+	./certbot-auto --config --test-cert /etc/letsencrypt/configs/site.conf certonly
 else
-	./certbot-auto --config /etc/letsencrypt/configs/$DOMAIN_NAME.conf certonly
+	./certbot-auto --config /etc/letsencrypt/configs/site.conf certonly
 fi
 
 if [ $? -ne 0 ]
