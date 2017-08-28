@@ -19,8 +19,11 @@ RUN touch /var/log/cron.log
 
 VOLUME /etc/letsencrypt/configs
 
-RUN ["/bin/bash", "-c", "groupadd -r letsencrypt"]
-RUN ["/bin/bash", "-c", "useradd --no-log-init -r -g letsencrypt letsencrypt"]
+#user
+RUN echo 'root:root' |chpasswd
+RUN adduser -S letsencrypt \
+    && echo "letsencrypt ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+    && echo 'letsencrypt:letsencrypt' | chpasswd
 
 RUN chown -R letsencrypt /etc/letsencrypt/
 
