@@ -17,6 +17,6 @@ RUN touch /var/log/cron.log
 
 VOLUME /etc/letsencrypt/configs
 
-WORKDIR /etc/letsencrypt/cron/
+WORKDIR /etc/letsencrypt/cron
 
 CMD run.sh
