@@ -17,7 +17,7 @@ COPY example.com.conf /etc/letsencrypt/configs/example.com.conf
 
 RUN touch /var/log/cron.log
 
-VOLUME /etc/letsencrypt/configs
+# VOLUME /etc/letsencrypt/configs
 
 #user
 RUN echo 'root:root' |chpasswd
@@ -25,7 +25,7 @@ RUN adduser -S letsencrypt \
     && echo "letsencrypt ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && echo 'letsencrypt:letsencrypt' | chpasswd
 
-RUN chown -R letsencrypt /etc/letsencrypt/
+RUN chown -R letsencrypt /etc/letsencrypt
 
 WORKDIR /etc/letsencrypt/cron
 
