@@ -31,6 +31,6 @@ WORKDIR /etc/letsencrypt/cron
 
 USER letsencrypt
 
-ENTRYPOINT [ "/bin/bash", "./run.sh" ]
+ENTRYPOINT "./run.sh"
 
 # CMD ./run.sh
