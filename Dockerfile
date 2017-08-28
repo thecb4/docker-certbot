@@ -4,6 +4,8 @@ FROM certbot/certbot
 
 # RUN git clone https://github.com/certbot/certbot /opt/certbot
 
+ENV PATH=/usr/local/bin:/usr/bin:$PATH
+
 RUN mkdir /etc/letsencrypt/cron
 
 ENV DOMAIN_NAME=example.com
@@ -17,8 +19,7 @@ RUN touch /var/log/cron.log
 
 VOLUME /etc/letsencrypt/configs
 
-RUN useradd --create-home --home-dir /usr/local/letsencrypt --shell /bin/bash letsencrypt
-RUN adduser letsencrypt sudo
+RUN groupadd -r letsencrypt && useradd --no-log-init -r -g letsencrypt letsencrypt
 
 RUN chown -R letsencrypt /etc/letsencrypt/
 
