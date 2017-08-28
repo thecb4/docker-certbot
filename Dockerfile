@@ -19,7 +19,7 @@ RUN touch /var/log/cron.log
 
 VOLUME /etc/letsencrypt/configs
 
-RUN groupadd -r letsencrypt && useradd --no-log-init -r -g letsencrypt letsencrypt
+RUN /bin/bash groupadd -r letsencrypt && /bin/bash useradd --no-log-init -r -g letsencrypt letsencrypt
 
 RUN chown -R letsencrypt /etc/letsencrypt/
 
