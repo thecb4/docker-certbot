@@ -23,7 +23,7 @@ RUN adduser -S letsencrypt \
     && echo "letsencrypt ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
     && echo 'letsencrypt:letsencrypt' | chpasswd
 
-RUN chown -R letsencrypt /etc/letsencrypt
+# RUN chown -R letsencrypt /etc/letsencrypt
 
 USER letsencrypt
 
