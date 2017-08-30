@@ -29,6 +29,6 @@ USER letsencrypt
 
 WORKDIR /etc/letsencrypt/cron
 
-ENTRYPOINT "./run.sh"
+# ENTRYPOINT "./run.sh"
 
-# CMD ./run.sh
+CMD ["sudo", "chown","-R","/etc/letsencrypt","&&","/etc/letsencrypt/cron/run.sh"]
