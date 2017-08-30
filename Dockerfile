@@ -33,4 +33,4 @@ WORKDIR /etc/letsencrypt/cron
 
 ENTRYPOINT ["/bin/sh","/etc/letsencrypt/cron/run.sh"]
 
-CMD []
+CMD ["/bin/sh"]
