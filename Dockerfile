@@ -19,16 +19,16 @@ RUN touch /var/log/cron.log
 
 #user
 RUN echo 'root:root' |chpasswd
-RUN adduser -S letsencrypt \
-    && echo "letsencrypt ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
-    && echo 'letsencrypt:letsencrypt' | chpasswd
+# RUN adduser -S letsencrypt \
+#     && echo "letsencrypt ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+#     && echo 'letsencrypt:letsencrypt' | chpasswd
 
 # RUN chown -R letsencrypt /etc/letsencrypt
 
-USER letsencrypt
+# USER letsencrypt
 
 WORKDIR /etc/letsencrypt/cron
 
 # ENTRYPOINT "./run.sh"
 
-CMD ["sudo", "chown","-R","/etc/letsencrypt","&&","/etc/letsencrypt/cron/run.sh"]
+ENTRYPOINT ["/bin/sh","/etc/letsencrypt/cron/run.sh"]
